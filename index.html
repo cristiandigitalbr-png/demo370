@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agustín Marchetti | Abogado</title>
+<meta name="description" content="Estudio Jurídico Integral. Emergencias penales 24hs. MP 3005. Tel: 3834-261155">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #080808;
+    --dark: #111111;
+    --dark2: #1a1a1a;
+    --gold: #c9a84c;
+    --gold-light: #e0c270;
+    --gold-pale: #f5edd8;
+    --white: #ffffff;
+    --off-white: #f0ede8;
+    --gray: #888888;
+    --light-gray: #333333;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Outfit', sans-serif; color: var(--white); background: var(--black); overflow-x: hidden; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 18px 60px; display: flex; justify-content: space-between; align-items: center;
+    background: rgba(8,8,8,0.95); backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+  }
+  .nav-brand { text-decoration: none; display: flex; align-items: center; gap: 14px; }
+  .nav-monogram {
+    width: 42px; height: 42px; border: 1px solid rgba(201,168,76,0.4);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600;
+    color: var(--gold); letter-spacing: -1px;
+  }
+  .nav-brand-text { }
+  .nav-brand-name { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-weight: 600; color: var(--white); display: block; letter-spacing: 1px; line-height: 1.2; }
+  .nav-brand-sub { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); font-weight: 400; display: block; }
+  .nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
+  .nav-links a { text-decoration: none; font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); transition: color 0.3s; }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta { border: 1px solid var(--gold) !important; color: var(--gold) !important; padding: 9px 22px; font-size: 10px !important; letter-spacing: 2px; transition: all 0.3s !important; }
+  .nav-cta:hover { background: var(--gold) !important; color: var(--black) !important; }
+
+  /* HERO */
+  .hero {
+    height: 100vh; min-height: 600px; position: relative;
+    display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background-image: url('Urgent_Promo_Flyer_for_Cristian_Saby_ADS__13_.png');
+    background-size: cover; background-position: center;
+    filter: brightness(0.15);
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(8,8,8,0.3) 0%, rgba(8,8,8,0.1) 40%, rgba(8,8,8,0.8) 100%);
+  }
+  .hero-content { position: relative; z-index: 2; max-width: 780px; padding: 0 30px; animation: fadeUp 1.2s ease-out; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+
+  .hero-monogram {
+    font-family: 'Cormorant Garamond', serif; font-size: clamp(60px, 10vw, 120px);
+    font-weight: 600; color: white; line-height: 1; margin-bottom: 8px; letter-spacing: -2px;
+    opacity: 0.12;
+  }
+  .hero-eyebrow { font-size: 10px; letter-spacing: 7px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; font-weight: 400; }
+  .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(38px, 6vw, 78px); font-weight: 300; color: white; line-height: 1.05; margin-bottom: 6px; letter-spacing: 2px; }
+  .hero-subtitle { font-size: 11px; letter-spacing: 7px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; font-weight: 400; }
+  .hero-mp { font-size: 11px; color: rgba(255,255,255,0.3); letter-spacing: 3px; margin-bottom: 32px; }
+  .hero-divider { width: 1px; height: 50px; background: linear-gradient(var(--gold), transparent); margin: 0 auto 32px; opacity: 0.5; }
+  .hero-tagline { font-family: 'Cormorant Garamond', serif; font-size: 16px; font-style: italic; color: rgba(255,255,255,0.5); margin-bottom: 40px; letter-spacing: 1px; }
+  .hero-buttons { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+
+  .btn-gold-solid { display: inline-flex; align-items: center; gap: 8px; padding: 14px 36px; background: var(--gold); color: var(--black); text-decoration: none; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; transition: all 0.3s; }
+  .btn-gold-solid:hover { background: var(--gold-light); transform: translateY(-2px); }
+  .btn-outline-white { display: inline-block; padding: 14px 36px; border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.7); text-decoration: none; font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; transition: all 0.3s; }
+  .btn-outline-white:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* URGENCIA BAR */
+  .urgencia-bar {
+    background: var(--gold); padding: 14px 50px;
+    display: flex; align-items: center; justify-content: center; gap: 16px;
+  }
+  .urgencia-bar span { font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--black); }
+  .urgencia-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--black); opacity: 0.4; }
+
+  /* SECTION */
+  .section-label { font-size: 10px; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; font-weight: 500; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 3.5vw, 46px); font-weight: 300; color: var(--white); line-height: 1.15; margin-bottom: 14px; letter-spacing: 1px; }
+  .section-divider { width: 36px; height: 1px; background: var(--gold); margin-bottom: 28px; opacity: 0.6; }
+
+  /* ABOUT */
+  .about-wrap { background: var(--dark); padding: 90px 60px; }
+  .about { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: start; }
+  .about-text p { font-size: 15px; line-height: 1.9; color: var(--gray); margin-bottom: 16px; text-align: center; font-weight: 300; }
+
+  .about-image { position: relative; height: 580px; }
+  .about-image img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; filter: grayscale(20%); }
+  .about-image::before { content: ''; position: absolute; inset: 0; border: 1px solid rgba(201,168,76,0.3); pointer-events: none; z-index: 2; }
+  .about-image::after { content: ''; position: absolute; bottom: -12px; right: -12px; width: 100%; height: 100%; border: 1px solid rgba(201,168,76,0.15); z-index: -1; }
+
+  /* SERVICIOS */
+  .servicios-wrap { background: var(--black); padding: 80px 60px; }
+  .servicios { max-width: 1100px; margin: 0 auto; }
+  .servicios-header { text-align: center; margin-bottom: 50px; }
+  .servicios-header .section-divider { margin: 0 auto; }
+  .servicios-header .section-title { color: var(--white); }
+  .servicios-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.1); }
+  .servicio-card { background: var(--black); padding: 36px 24px; text-align: center; transition: all 0.3s; }
+  .servicio-card:hover { background: var(--dark2); }
+  .servicio-icon { width: 48px; height: 48px; border: 1px solid rgba(201,168,76,0.3); display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; }
+  .servicio-nombre { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-weight: 500; color: var(--white); margin-bottom: 8px; line-height: 1.3; }
+  .servicio-desc { font-size: 11px; color: var(--gray); line-height: 1.5; letter-spacing: 0.3px; }
+
+  /* MID BANNER */
+  .mid-banner { background: var(--dark2); padding: 80px 60px; text-align: center; position: relative; overflow: hidden; border-top: 1px solid rgba(201,168,76,0.1); border-bottom: 1px solid rgba(201,168,76,0.1); }
+  .mid-banner-content { position: relative; z-index: 2; max-width: 600px; margin: 0 auto; }
+  .mid-banner-content .section-label { color: var(--gold); }
+  .mid-banner-content h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 4vw, 48px); font-weight: 300; color: white; margin-bottom: 12px; letter-spacing: 1px; }
+  .mid-banner-content p { color: var(--gray); font-size: 14px; margin-bottom: 36px; line-height: 1.7; font-weight: 300; }
+  .mid-divider { width: 36px; height: 1px; background: rgba(201,168,76,0.4); margin: 0 auto 20px; }
+
+  /* CONTACTO */
+  .contacto-wrap { background: var(--dark); padding: 70px 24px 40px; }
+  .contacto { max-width: 440px; margin: 0 auto; text-align: center; }
+  .contacto .section-divider { margin: 0 auto 28px; }
+  .contacto .section-title { color: var(--white); font-size: clamp(24px, 3vw, 36px); }
+  .contacto-items { display: flex; flex-direction: column; }
+  .contacto-item { padding: 20px 0; border-bottom: 1px solid rgba(201,168,76,0.1); }
+  .contacto-item:last-child { border-bottom: none; }
+  .contacto-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; font-weight: 500; }
+  .contacto-value { font-family: 'Cormorant Garamond', serif; font-size: 20px; color: var(--white); }
+  .contacto-value a { color: var(--gold-light); text-decoration: none; font-family: 'Outfit', sans-serif; font-size: 18px; font-weight: 400; letter-spacing: 1px; }
+
+  /* FOOTER */
+  footer { background: var(--black); text-align: center; padding: 44px 24px; border-top: 1px solid rgba(201,168,76,0.1); }
+  .footer-monogram { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 600; color: var(--gold); letter-spacing: -1px; margin-bottom: 8px; opacity: 0.7; }
+  .footer-name { font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 400; color: rgba(255,255,255,0.5); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 4px; }
+  .footer-divider { width: 32px; height: 1px; background: rgba(201,168,76,0.3); margin: 16px auto; }
+  .footer-text { font-size: 12px; line-height: 1.8; color: rgba(255,255,255,0.25); letter-spacing: 0.3px; }
+
+  @media (max-width: 768px) {
+    nav { padding: 14px 20px; }
+    .nav-links { display: none; }
+    .urgencia-bar { padding: 12px 20px; }
+    .about-wrap { padding: 50px 20px; }
+    .about { grid-template-columns: 1fr; gap: 36px; }
+    .about-image { height: 440px; }
+    .servicios-wrap { padding: 50px 20px; }
+    .servicios-grid { grid-template-columns: repeat(2, 1fr); }
+    .mid-banner { padding: 50px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#inicio" class="nav-brand">
+    <div class="nav-monogram">AM</div>
+    <div class="nav-brand-text">
+      <span class="nav-brand-name">Agustín Marchetti</span>
+      <span class="nav-brand-sub">Abogado · MP 3005</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#nosotros">Sobre Mí</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+    <li><a href="https://wa.me/5438342611552" target="_blank" class="nav-cta">Consultar</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Estudio Jurídico Integral</div>
+    <h1 class="hero-title">Agustín Marchetti</h1>
+    <div class="hero-subtitle">Abogado</div>
+    <div class="hero-mp">MP 3005</div>
+    <div class="hero-divider"></div>
+    <div class="hero-tagline">Responsabilidad y compromiso en cada caso</div>
+    <div class="hero-buttons">
+      <a href="https://wa.me/5438342611552" target="_blank" class="btn-gold-solid">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="#080808"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+        Consultar ahora
+      </a>
+      <a href="#servicios" class="btn-outline-white">Ver Servicios</a>
+    </div>
+  </div>
+</section>
+
+<!-- URGENCIA BAR -->
+<div class="urgencia-bar">
+  <div class="urgencia-dot"></div>
+  <span>Emergencias Penales · 24 Horas · 365 Días</span>
+  <div class="urgencia-dot"></div>
+</div>
+
+<!-- ABOUT -->
+<div class="about-wrap" id="nosotros">
+  <div class="about">
+    <div class="about-text">
+      <div class="section-label" style="text-align:center;">Sobre Mí</div>
+      <h2 class="section-title" style="text-align:center; font-size:clamp(24px,3vw,38px);">Agustín Marchetti</h2>
+      <div class="section-divider" style="margin:0 auto 28px;"></div>
+      <p>Soy abogado con matrícula profesional MP 3005, especializado en derecho penal y causas complejas. Mi compromiso es estar disponible cuando más me necesitan, incluso en situaciones de emergencia.</p>
+      <p>Trabajo con responsabilidad, rigor jurídico y dedicación total a cada caso, entendiendo que detrás de cada causa hay una persona que merece la mejor defensa posible.</p>
+      <p>Mi objetivo es brindar un asesoramiento claro, honesto y efectivo, construyendo una relación de confianza con cada cliente desde el primer contacto.</p>
+    </div>
+    <div class="about-image">
+      <img src="Urgent Promo Flyer for Cristian Saby ADS (12).png" alt="Dr. Agustín Marchetti">
+    </div>
+  </div>
+</div>
+
+<!-- SERVICIOS -->
+<div class="servicios-wrap" id="servicios">
+  <div class="servicios">
+    <div class="servicios-header">
+      <div class="section-label">Áreas de práctica</div>
+      <h2 class="section-title">Nuestros Servicios</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="servicios-grid">
+      <div class="servicio-card">
+        <div class="servicio-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div class="servicio-nombre">Defensas Penales</div>
+        <div class="servicio-desc">Defensa integral en toda clase de causas penales</div>
+      </div>
+      <div class="servicio-card">
+        <div class="servicio-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div class="servicio-nombre">Emergencias 24hs</div>
+        <div class="servicio-desc">Atención inmediata ante detenciones y urgencias penales</div>
+      </div>
+      <div class="servicio-card">
+        <div class="servicio-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <div class="servicio-nombre">Excarcelaciones</div>
+        <div class="servicio-desc">Gestión urgente de libertades y excarcelaciones</div>
+      </div>
+      <div class="servicio-card">
+        <div class="servicio-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div class="servicio-nombre">Violencia Familiar</div>
+        <div class="servicio-desc">Defensa en causas de violencia doméstica y de género</div>
+      </div>
+      <div class="servicio-card">
+        <div class="servicio-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <div class="servicio-nombre">Delitos Informáticos</div>
+        <div class="servicio-desc">Defensa especializada en ciberdelitos</div>
+      </div>
+      <div class="servicio-card">
+        <div class="servicio-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+        <div class="servicio-nombre">Drogas</div>
+        <div class="servicio-desc">Defensa en causas de tenencia y comercialización</div>
+      </div>
+      <div class="servicio-card">
+        <div class="servicio-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <div class="servicio-nombre">Accidentes</div>
+        <div class="servicio-desc">Defensa en accidentes de tránsito con resultado penal</div>
+      </div>
+      <div class="servicio-card">
+        <div class="servicio-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-4.95"/></svg></div>
+        <div class="servicio-nombre">Restitución de Elementos</div>
+        <div class="servicio-desc">Recuperación de bienes y elementos secuestrados</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MID BANNER -->
+<div class="mid-banner">
+  <div class="mid-banner-content">
+    <div class="section-label">Disponible Ahora</div>
+    <div class="mid-divider"></div>
+    <h2>¿Necesitás asesoramiento?</h2>
+    <p>Ante una emergencia penal, cada minuto cuenta. Escribime por WhatsApp y te respondo de inmediato con total confidencialidad.</p>
+    <a href="https://wa.me/5438342611552" target="_blank" class="btn-gold-solid">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="#080808"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+      Consulta urgente
+    </a>
+  </div>
+</div>
+
+<!-- CONTACTO -->
+<div class="contacto-wrap" id="contacto">
+  <div class="contacto">
+    <div class="section-label">Contacto</div>
+    <h2 class="section-title">Encontranos</h2>
+    <div class="section-divider"></div>
+    <div class="contacto-items">
+      <div class="contacto-item">
+        <div class="contacto-label">WhatsApp · 24hs</div>
+        <div class="contacto-value"><a href="https://wa.me/5438342611552">3834-261155</a></div>
+      </div>
+      <div class="contacto-item">
+        <div class="contacto-label">Matrícula</div>
+        <div class="contacto-value" style="font-size:17px;">MP 3005</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-monogram">AM</div>
+  <div class="footer-name">Agustín Marchetti</div>
+  <div class="footer-divider"></div>
+  <div class="footer-text">
+    Abogado · MP 3005 · Emergencias Penales 24hs<br>
+    <span style="font-size:11px; color:rgba(255,255,255,0.15); margin-top:10px; display:block;">© 2025 · Todos los derechos reservados</span>
+  </div>
+</footer>
+
+</body>
+</html>
